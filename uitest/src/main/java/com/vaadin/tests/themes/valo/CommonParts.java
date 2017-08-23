@@ -279,14 +279,13 @@ public class CommonParts extends VerticalLayout implements View {
                 addComponent(grid);
                 grid.setSpacing(true);
 
-                Button pos = new Button("", new ClickListener() {
+                Button pos = new Button(ValoTheme.BUTTON_SMALL, new ClickListener() {
                     @Override
                     public void buttonClick(ClickEvent event) {
                         notification.setPosition(Position.TOP_LEFT);
                         notification.show(Page.getCurrent());
                     }
                 });
-                pos.addStyleName(ValoTheme.BUTTON_SMALL);
                 grid.addComponent(pos);
 
                 pos = new Button("", new ClickListener() {
