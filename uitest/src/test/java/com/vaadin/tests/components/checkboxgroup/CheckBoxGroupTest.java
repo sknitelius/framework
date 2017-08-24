@@ -292,9 +292,4 @@ public class CheckBoxGroupTest extends MultiBrowserTest {
         }
     }
 
-    // needed to make tooltips work in IE tests
-    @Override
-    protected boolean requireWindowFocusForIE() {
-        return true;
-    }
 }
