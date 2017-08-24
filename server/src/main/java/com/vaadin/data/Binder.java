@@ -490,6 +490,32 @@ public class Binder<BEAN> implements Serializable {
          * <li>the required indicator is visible</li>
          * <li>the field value is validated for not being empty*</li>
          * </ol>
+         * For specifiying an error message, use
+         * {@link #asRequired(String)}.
+         * For localizing the error message, use
+         * {@link #asRequired(ErrorMessageProvider)}.
+         * <p>
+         * *Value not being the equal to what {@link HasValue#getEmptyValue()}
+         * returns.
+         *
+         * @see #asRequired(ErrorMessageProvider)
+         * @see HasValue#setRequiredIndicatorVisible(boolean)
+         * @see HasValue#isEmpty()
+         * @param errorMessage
+         *            the error message to show for the invalid value
+         * @return this binding, for chaining
+         * @since 8.2
+         */
+        public default BindingBuilder<BEAN, TARGET> asRequired() {
+            return asRequired(context -> "");
+        }
+        
+        /**
+         * Sets the field to be required. This means two things:
+         * <ol>
+         * <li>the required indicator is visible</li>
+         * <li>the field value is validated for not being empty*</li>
+         * </ol>
          * For localizing the error message, use
          * {@link #asRequired(ErrorMessageProvider)}.
          * <p>
